@@ -19,7 +19,7 @@ const Products = () => {
   const showProducts =async()=>{
       
     try{
-      const res = await fetch("/products/")
+      const res = await fetch("https://taptechinc-server.herokuapp.com/products/")
       const data =await res.json()
       if(res.status ===200){
         setData(data)
@@ -109,7 +109,7 @@ const Products = () => {
       return (<Fragment key={data._id}>
       <div className="p-4 md:w-1/3">
         <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden p-2">
-          <img className="lg:h-60 md:h-36 w-full object-cover object-center" src={`http://127.0.0.1:8070/products/${data.picture}`} alt="blog" />
+          <img className="lg:h-60 md:h-36 w-full object-cover object-center" src={`https://taptechinc-server.herokuapp.com/products/${data.picture}`} alt="blog" />
           <div className="p-6">
             
             <h1 className="title-font text-2xl font-medium text-white mb-3">{data.card_name}</h1>
