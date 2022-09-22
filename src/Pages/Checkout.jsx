@@ -45,7 +45,7 @@ const LogUser =async()=>{
   try{
 
     if(updatedState){
-      const res = await fetch(`/product/cart/`,{
+      const res = await fetch(`https://taptechinc-server.herokuapp.com/product/cart/`,{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
