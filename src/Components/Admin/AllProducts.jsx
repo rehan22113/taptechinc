@@ -267,7 +267,7 @@ const AllProducts = () => {
           </span>
         </td>
         <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-          <img className="w-10 h-10 rounded-full" src={`http://localhost:8070/products/${data.picture}`} alt="pic" />
+          <img className="w-10 h-10 rounded-full" src={`https://taptechinc-server.herokuapp.com/products/${data.picture}`} alt="pic" />
           <p className="pl-3">
             <span className="text-base font-semibold">{data.card_name}</span>
             
