@@ -9,10 +9,13 @@ const Context = ({children}) => {
   // Check user is logged in?
     const LogIn=async()=>{
 
-      const res = await fetch("https://taptechinc-server.herokuapp.com/checkuser",{method:"GET",headers:{
+      const res = await fetch("https://taptechinc-server.herokuapp.com/checkuser",{
+        method:"GET",
+        headers:{
         "Content-Type":"application/json",
         "Accept":"application/json"
-      }})
+        }
+      })
       const userData = await res.json()
       // console.log("context",userData);
     if(res.status===200){

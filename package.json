@@ -2,7 +2,6 @@
   "name": "taptech",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://taptechinc-server.herokuapp.com",
   "homepage": "/",
   "dependencies": {
     "@headlessui/react": "^1.6.6",
