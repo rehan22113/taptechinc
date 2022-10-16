@@ -47,7 +47,7 @@ const Profile = () => {
 
       if(res.status === 200){
         alert(data.message)
-        setuser({...user,picture:`http://localhost:8000/picture/${userData.user.picture}`})
+        setuser({...user,picture:`https://taptechinc-server.herokuapp.com/picture/${userData.user.picture}`})
         LogUser()
       }
       console.log(res);
@@ -120,7 +120,7 @@ const Profile = () => {
                   <span className="inline-block h-32 w-32 rounded-full overflow-hidden bg-gray-100">
                   {userData.user?(
 
-                    <img src={`http://localhost:8070/picture/${userData.user.picture}`} alt="userImage" />
+                    <img src={`https://taptechinc-server.herokuapp.com/picture/${userData.user.picture}`} alt="userImage" />
                   ):(
                     ""
                   )}
