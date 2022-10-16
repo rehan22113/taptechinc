@@ -17,7 +17,7 @@ const Users = () => {
     const [user,setUser] = useState([])
 
     const DeleteUser=async(id)=>{
-       const res= await fetch(`user/delete/${id}`,{method:"delete"})
+       const res= await fetch(`https://taptechinc-server.herokuapp.com/user/delete/${id}`,{method:"delete"})
        const message = await res.json()
         if(res.status===200){
           alert(message.message)
@@ -27,7 +27,7 @@ const Users = () => {
     const FetchUsers =async()=>{
         try{
 
-            const res = await fetch("/allusers",{method:"GET"})
+            const res = await fetch("https://taptechinc-server.herokuapp.com/allusers",{method:"GET"})
             const users=await res.json()
             console.log(users.users)
             setUser(users.users)

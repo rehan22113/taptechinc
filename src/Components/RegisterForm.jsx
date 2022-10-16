@@ -18,7 +18,7 @@ const dataHandler=(e)=>{
 const postData=async(e)=>{
     e.preventDefault()
     const {firstName,lastName,email,password} = data
-    const res = await fetch("/user/register",
+    const res = await fetch("https://taptechinc-server.herokuapp.com/user/register",
     {
       method:"POST",
       headers:{
