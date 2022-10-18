@@ -10,11 +10,7 @@ const Context = ({children}) => {
     const LogIn=async()=>{
 
       const res = await fetch("https://taptechinc-server.herokuapp.com/checkuser",{
-        method:"GET",
-        headers:{
-        "Content-Type":"application/json",
-        "Accept":"application/json"
-        }
+        method:"GET"
       })
       const userData = await res.json()
       // console.log("context",userData);

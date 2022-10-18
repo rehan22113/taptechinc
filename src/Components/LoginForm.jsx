@@ -28,6 +28,7 @@ const LoginForm = () => {
       const res = await fetch("https://taptechinc-server.herokuapp.com/user/login",
       {
         method:"POST",
+        withCredentials: true,
         headers:{
           "Content-Type":"application/json",
           "Accept":"application/json"
@@ -61,10 +62,7 @@ const LoginForm = () => {
       console.log(err);
     }
   }
-  //
-  
-
-  
+ 
   const LogUser =async()=>{
     try{
 
