@@ -103,7 +103,7 @@ const Cart = () => {
         </div>
         <div className="h-full px-2 pt-2 pb-10 rounded-lg overflow-hidden lg:w-2/4 flex justify-center items-center">
         {product?(
-          <img src={`https://taptechinc-REACT_APP.herokuapp.com/products/${product.picture}`} alt="card_image" className='' />  
+          <img src={`${process.env.REACT_APP_API}/products/${product.picture}`} alt="card_image" className='' />  
         ):("loading..")}
         </div>
       </div>

@@ -120,7 +120,7 @@ const Profile = () => {
                   <span className="inline-block h-32 w-32 rounded-full overflow-hidden bg-gray-100">
                   {userData.user?(
 
-                    <img src={`https://taptechinc-server.herokuapp.com/picture/${userData.user.picture}`} alt="userImage" />
+                    <img src={`${process.env.REACT_APP_API}/picture/${userData.user.picture}`} alt="userImage" />
                   ):(
                     ""
                   )}
