@@ -38,7 +38,7 @@ const Profile = () => {
     const {picture} = updateData
     formData.append("picture",picture)
     console.log("post picture",formData);
-    const res = await fetch(`https://taptechinc-server.herokuapp.com/admin/picture/${userData.user._id}`,{
+    const res = await fetch(`${process.env.SERVER_API}/admin/picture/${userData.user._id}`,{
       method:"PATCH",
       body:formData
     })
@@ -47,7 +47,7 @@ const Profile = () => {
 
       if(res.status === 200){
         alert(data.message)
-        setuser({...user,picture:`https://taptechinc-server.herokuapp.com/picture/${userData.user.picture}`})
+        setuser({...user,picture:`${process.env.SERVER_API}/picture/${userData.user.picture}`})
         LogUser()
       }
       console.log(res);
@@ -57,7 +57,7 @@ const Profile = () => {
   const postData = async(e)=>{
     e.preventDefault()
     const {email,password,confirm_password} = updateData
-    const res = await fetch(`https://taptechinc-server.herokuapp.com/admin/update/${userData.user._id}`,{
+    const res = await fetch(`${process.env.SERVER_API}/admin/update/${userData.user._id}`,{
       method:"PATCH",
       headers:{
         "Content-Type":"application/json"
@@ -79,7 +79,7 @@ const Profile = () => {
   const LogUser = async()=>{
     try{
       console.log("Profile");
-      const res = await fetch("https://taptechinc-server.herokuapp.com/dashboard",{method:"GET",headers:{
+      const res = await fetch(`${process.env.SERVER_API}/dashboard`,{method:"GET",headers:{
         "Content-Type":"application/json",
         "Accept":"application/json"
       }})

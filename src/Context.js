@@ -9,7 +9,7 @@ const Context = ({children}) => {
   // Check user is logged in?
     const LogIn=async()=>{
 
-      const res = await fetch("https://taptechinc-server.herokuapp.com/checkuser",{
+      const res = await fetch(`${process.env.SERVER_API}/checkuser`,{
         method:"GET"
       })
       const userData = await res.json()

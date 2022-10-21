@@ -25,7 +25,7 @@ const LoginForm = () => {
     try{
       e.preventDefault();
       const {email,password} = data
-      const res = await fetch("https://taptechinc-server.herokuapp.com/user/login",
+      const res = await fetch(`${process.env.REACT_APP_API}/user/login`,
       {
         method:"POST",
         withCredentials: true,
