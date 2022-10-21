@@ -57,7 +57,7 @@ const AllProducts = () => {
 
 
 
-        const res= await fetch("/products/upload/",{
+        const res= await fetch(`${process.env.SERVER_API}/products/upload/`,{
           method:"PATCH",
           body: formData
         })
@@ -85,7 +85,7 @@ const AllProducts = () => {
     const showProducts =async()=>{
       
       try{
-        const res = await fetch("/products/")
+        const res = await fetch(`${process.env.SERVER_API}/products/`)
         const data =await res.json()
         if(res.status ===200){
           setProducts(data)
@@ -103,7 +103,7 @@ const AllProducts = () => {
       // finding products
 
     const findProduct=async(id)=>{
-        const res = await fetch(`/products/findProducts/${id}`,{method:"GET"})
+        const res = await fetch(`${process.env.SERVER_API}/products/findProducts/${id}`,{method:"GET"})
         const userData = await res.json()
         console.log("before",data);
         setData({
@@ -120,7 +120,7 @@ const AllProducts = () => {
     const DeleteProduct=async(id)=>{
       try{
 
-        const  res = await fetch(`/products/delete/${id}`,{method:"delete"})
+        const  res = await fetch(`${process.env.SERVER_API}/products/delete/${id}`,{method:"delete"})
         console.log(res);
         if(res.status === 200){
           await AllProducts()

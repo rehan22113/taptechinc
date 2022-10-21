@@ -24,7 +24,7 @@ const Cart = () => {
   })
   const SearchProduct=async()=>{
     try{
-      const res = await fetch(`https://taptechinc-server.herokuapp.com/products/findProducts/${id}`)
+      const res = await fetch(`${process.env.REACT_APP_API}/products/findProducts/${id}`)
       const data = await res.json()
       // console.log(data.data);
       setProduct(data.data);
@@ -35,7 +35,7 @@ const Cart = () => {
   }
   
   const postData=async()=>{
-    const res = await fetch(`https://taptechinc-server.herokuapp.com/products/cart/add-to-cart`,{
+    const res = await fetch(`${process.env.REACT_APP_API}/products/cart/add-to-cart`,{
       method:"post",
       headers:{
         "Content-Type":"application/json",
@@ -103,7 +103,7 @@ const Cart = () => {
         </div>
         <div className="h-full px-2 pt-2 pb-10 rounded-lg overflow-hidden lg:w-2/4 flex justify-center items-center">
         {product?(
-          <img src={`https://taptechinc-server.herokuapp.com/products/${product.picture}`} alt="card_image" className='' />  
+          <img src={`https://taptechinc-REACT_APP.herokuapp.com/products/${product.picture}`} alt="card_image" className='' />  
         ):("loading..")}
         </div>
       </div>
